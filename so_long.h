@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 12:22:57 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/15 10:18:21 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:36:37 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 
-#include <Carbon/Carbon.h>
+//#include <Carbon/Carbon.h>
 
 # if defined(__APPLE__) && defined(__MACH__)
 #  include "mlx/mlx.h"
