@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 12:22:57 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/15 14:36:37 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/16 09:18:10 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
-
-//#include <Carbon/Carbon.h>
+# include <X11/keysym.h>
+# include <X11/X.h>
 
 # if defined(__APPLE__) && defined(__MACH__)
 #  include "mlx/mlx.h"
+#  include <Carbon/Carbon.h>
+
 # else
 #  include "mlx_linux/mlx.h"
 
@@ -43,6 +45,30 @@
 # define ERROR_PATH "Error: map does not have a valid path\n"
 # define ERROR_GAME_INIT "Error: game initialization failed\n"
 # define ERROR_IMG_LOAD "Error: could not load image %s\n"
+# define GAME_COMPLETE "Congratulations! You completed the game!\n"
+
+# if defined(__APPLE__) && defined(__MACH__)
+#  define LEFT_KEY				123	
+#  define RIGHT_KEY				124	
+#  define UP_KEY				126
+#  define DOWN_KEY				125	
+#  define A_KEY					0
+#  define S_KEY					1
+#  define D_KEY					2
+#  define W_KEY					13
+#  define ESC 					53
+
+# else
+#  define LEFT_KEY				65361
+#  define RIGHT_KEY				65363
+#  define UP_KEY				65362
+#  define DOWN_KEY				65364
+#  define A_KEY					97
+#  define W_KEY					119
+#  define S_KEY					115
+#  define D_KEY					100
+#  define ESC					65307
+# endif
 
 # define PIXEL 64
 
@@ -81,8 +107,18 @@ typedef struct s_game
 	t_img	*img;
 	void	*window;
 	int		move_count;
+	int		player_state;
 }	t_game;
 
+typedef struct s_intro
+{
+    void    *mlx;
+    void    *window;
+    void    *img;
+    int     img_width;
+    int     img_height;
+    int     game_started;
+} t_intro;
 
 typedef struct s_var
 {
@@ -94,6 +130,9 @@ int	error(char *msg);
 void	free_map_matrix(char **matrix);
 void	free_map_struct(t_map *map);
 void	free_structs(t_game *game);
+
+int	close_window(t_game *game);
+int	input_key(int keysym, t_game *game);
 
 char	**get_matrix(int fd);
 int		count_rows(char **matrix);
@@ -114,5 +153,10 @@ int	valid_map(t_map *map);
 int	map_rectangle(t_map *map);
 int	map_closed(t_map *map);
 int	path_valid(t_map *map);
+
+void	press_left(t_game *game);
+void	press_right(t_game *game);
+void	press_down(t_game *game);
+void	press_up(t_game *game);
 
 #endif

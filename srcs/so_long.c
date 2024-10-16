@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 14:40:16 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/10 18:12:41 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/16 09:18:42 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	main(int argc, char *argv[])
 	if (!game)
 		return (ft_printf(ERROR_GAME_INIT), EXIT_FAILURE);
 	render(game);
+	mlx_hook(game->window, KeyPress, KeyPressMask, input_key, game);
+	mlx_hook(game->window, DestroyNotify, NoEventMask, close_window, game);
 	mlx_loop(game->mlx);
 	return (0);
 }
