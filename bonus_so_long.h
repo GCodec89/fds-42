@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   bonus_so_long.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 12:22:57 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/16 10:26:57 by gonolive         ###   ########.fr       */
+/*   Created: 2024/10/16 10:33:04 by gonolive          #+#    #+#             */
+/*   Updated: 2024/10/16 10:40:30 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef BONUS_SO_LONG_H
+# define BONUS_SO_LONG_H
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -112,36 +112,6 @@ typedef struct s_game
 
 int	error(char *msg);
 
-void	free_map_matrix(char **matrix);
-void	free_map_struct(t_map *map);
-void	free_structs(t_game *game);
-
-int	close_window(t_game *game);
-int	input_key(int keysym, t_game *game);
-
-char	**get_matrix(int fd);
-int		count_rows(char **matrix);
-t_point	player_position(char **matrix);
-int	count_stuff(char **matrix, char c);
-
-t_map	*init_map(char *filename);
-void	init_tmp(t_map *tmp, t_map *map);
-t_img	*init_img(t_game *game);
-t_game	*init_game(t_map *map);
-
-void	put_title(t_game *game, char *path, int x, int y);
-void	render(t_game *game);
-
 int	check_args(int argc, char *argv[]);
-
-int	valid_map(t_map *map);
-int	map_rectangle(t_map *map);
-int	map_closed(t_map *map);
-int	path_valid(t_map *map);
-
-void	press_left(t_game *game);
-void	press_right(t_game *game);
-void	press_down(t_game *game);
-void	press_up(t_game *game);
 
 #endif

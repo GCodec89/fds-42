@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 22:53:01 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/15 23:25:03 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/16 10:28:19 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ static void	move_up(t_game *game)
 	}
 	if (game->player_state == 0)
 	{
-		put_title(game, "./img/p-tr1.xpm", (pos.y) * PIXEL, (pos.x - 1) * PIXEL);
+		put_title(game, "./img/p-tr1.xpm", pos.y * PIXEL, (pos.x - 1) * PIXEL);
 		game->player_state = 1;
 	}
 	else
 	{
-		put_title(game, "./img/p-tr2.xpm", (pos.y) * PIXEL, (pos.x - 1) * PIXEL);
+		put_title(game, "./img/p-tr2.xpm", pos.y * PIXEL, (pos.x - 1) * PIXEL);
 		game->player_state = 0;
 	}
 }
