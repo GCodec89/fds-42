@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 18:14:05 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/15 19:47:55 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/17 14:46:49 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	init_tmp(t_map *tmp, t_map *map)
 	tmp->count_e = map->count_e;
 }
 
-t_img	*init_img(t_game *game)
+t_imge	*init_img(t_game *game)
 {
 	game->img->img_ptr = mlx_new_image(game->mlx,
 			(game->map->col * PIXEL), (game->map->row * PIXEL));
@@ -103,7 +103,7 @@ t_game	*init_game(t_map *map)
 	if (!game->window)
 		return (free_structs(game), NULL);
 	game->map = map;
-	game->img = (t_img *)malloc(sizeof(t_img));
+	game->img = (t_imge *)malloc(sizeof(t_imge));
 	if (!game->img)
 		return (NULL);
 	game->img = init_img(game);

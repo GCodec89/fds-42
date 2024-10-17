@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 12:22:57 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/16 10:26:57 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/17 14:46:35 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 
 # else
 #  include "mlx_linux/mlx.h"
+#  include "mlx_linux/mlx_int.h"
 
 # endif
 
@@ -78,7 +79,7 @@ typedef	struct s_point
 	int	y;
 }	t_point;
 
-typedef struct s_img
+typedef struct s_imge
 {
 	void	*img_ptr;
 	int		bpp;
@@ -86,7 +87,7 @@ typedef struct s_img
 	int		endian;
 	char	*addr;
 	t_point	title_pos;
-}	t_img;
+}	t_imge;
 
 
 typedef	struct s_map
@@ -104,7 +105,7 @@ typedef struct s_game
 {
 	void	*mlx;
 	t_map	*map;
-	t_img	*img;
+	t_imge	*img;
 	void	*window;
 	int		move_count;
 	int		player_state;
@@ -126,7 +127,7 @@ int	count_stuff(char **matrix, char c);
 
 t_map	*init_map(char *filename);
 void	init_tmp(t_map *tmp, t_map *map);
-t_img	*init_img(t_game *game);
+t_imge	*init_img(t_game *game);
 t_game	*init_game(t_map *map);
 
 void	put_title(t_game *game, char *path, int x, int y);
