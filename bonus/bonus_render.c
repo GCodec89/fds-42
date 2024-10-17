@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:28:26 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/16 20:31:16 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/17 13:18:41 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	render(t_game *game)
 			else if (game->map->matrix[y][x] == 'P')
 				put_title(game, "./img/P.xpm", (x * PIXEL), (y * PIXEL));
 			else if (game->map->matrix[y][x] == 'R')
-				put_title(game, "./img/P.xpm", (x * PIXEL), (y * PIXEL));
+				put_title(game, "./img/R.xpm", (x * PIXEL), (y * PIXEL));
 			y++;
 		}
 		x++;
