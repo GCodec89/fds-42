@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 09:52:16 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/17 15:04:07 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/17 16:51:56 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ void	free_structs(t_game *game)
 		}
 		if (game->window)
 			mlx_destroy_window(game->mlx, game->window);
-		if (game->mlx)
+		/*if (game->mlx)
 		{
 			mlx_destroy_display(game->mlx);
 			free(game->mlx);
-		}
+		}*/
 		free(game);
 	}
 }

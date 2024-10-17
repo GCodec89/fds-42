@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 11:58:50 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/09 09:32:45 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/17 20:20:34 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # include "printf/ft_printf.h"
 
 int		ft_atoi(char *str);
+char	*ft_itoa(int n);
 char	**ft_split(char const *str, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *str);

@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 10:36:10 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/16 20:36:04 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/17 20:50:34 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,23 @@ Ex: ./so_long maps/map.ber");
 	return (0);
 }
 
+void	print_move(t_game *game)
+{
+	//char	*font;
+	char	*count;
+	char	*c;
+
+	//font = "-misc-fixed-bold-r-normal--18-120-100-100-c-90-iso8859-9";
+	count = ft_itoa(game->move_count);
+	c = ft_strjoin("Move count: ", count);
+	mlx_put_image_to_window(game->mlx, game->window,
+		game->img->block_ptr, 14, 5);
+	//mlx_set_font(game->mlx, game->window, font);
+	mlx_string_put(game->mlx, game->window, 20, 20, 0xFFFFFF, c);
+	free(count);
+	free(c);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_map	*map;
@@ -45,5 +62,6 @@ int	main(int argc, char *argv[])
 		return (ft_printf(ERROR_GAME_INIT), EXIT_FAILURE);
 	srand(time(NULL));
 	render(game);
+	print_move(game);
 	mlx_loop(game->mlx);
 }

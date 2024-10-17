@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 10:33:04 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/16 20:30:19 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/17 20:33:01 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,7 @@ void	render(t_game *game);
 void	put_title(t_game *game, char *path, int x, int y);
 
 int	check_args(int argc, char *argv[]);
+void	print_move(t_game *game);
 
 int	valid_map(t_map *map);
 int	map_rectangle(t_map *map);

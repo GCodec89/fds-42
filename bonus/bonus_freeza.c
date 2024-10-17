@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 13:52:33 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/17 15:30:42 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/17 16:54:31 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	free_map_matrix(char **matrix)
 	}
 	free(matrix);
 }
+
 void	free_map_struct(t_map *map)
 {
 	if (map)
@@ -61,11 +62,11 @@ void	free_structs(t_game *game)
 		}
 		if (game->window)
 			mlx_destroy_window(game->mlx, game->window);
-		if (game->mlx)
+		/*if (game->mlx)
 		{
 			mlx_destroy_display(game->mlx);
 			free(game->mlx);
-		}
+		}*/
 		free(game);
 	}
 }
