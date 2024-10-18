@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 10:36:10 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/18 13:20:27 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/18 18:12:04 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,8 @@ int	main(int argc, char *argv[])
 	render(game);
 	print_move(game);
 	mlx_loop_hook(game->mlx, random_move, game);
+	mlx_hook(game->window, KeyPress, KeyPressMask, key_input, game);
+	mlx_hook(game->window, DestroyNotify, NoEventMask, close_window, game);
 	mlx_loop(game->mlx);
+	return (0);
 }
