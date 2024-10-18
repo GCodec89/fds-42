@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 10:36:10 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/17 20:50:34 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/18 13:20:27 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,19 @@ void	print_move(t_game *game)
 	free(c);
 }
 
+int	random_move(t_game *game)
+{
+	time_t	r_curr_time;
+
+	r_curr_time = time(NULL);
+	if (r_curr_time - game->r_move_time >= RENEMY_INT)
+	{
+		move_renemy(game);
+		game->r_move_time = r_curr_time;
+	}
+	return (0);
+}
+
 int	main(int argc, char *argv[])
 {
 	t_map	*map;
@@ -63,5 +76,6 @@ int	main(int argc, char *argv[])
 	srand(time(NULL));
 	render(game);
 	print_move(game);
+	mlx_loop_hook(game->mlx, random_move, game);
 	mlx_loop(game->mlx);
 }

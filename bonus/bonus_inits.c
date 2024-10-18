@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:17:39 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/16 20:21:50 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/18 14:27:26 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,7 @@ t_game	*init_game(t_map *map)
 		return (free_structs(game), NULL);
 	game->move_count = 0;
 	game->player_state = 0;
+	game->renemy_state = 0;
 	game->r_move_time = time(NULL);
-	game->c_move_time = time(NULL);
 	return (game);
 }

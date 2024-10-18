@@ -6,7 +6,7 @@
 #    By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 13:14:45 by gonolive          #+#    #+#              #
-#    Updated: 2024/10/17 14:50:51 by gonolive         ###   ########.fr        #
+#    Updated: 2024/10/18 13:06:10 by gonolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,10 @@ BONUS_SRCS	=	bonus/bonus_so_long.c \
 				bonus/bonus_valid_map.c \
 				bonus/bonus_freeza.c \
 				bonus/bonus_render.c \
+				bonus/bonus_move_renemy.c \
+				bonus/bonus_find_renemy.c \
+				bonus/bonus_hookie.c \
+				bonus/bonus_move_renemy_utils.c \
 
 LIBFT		=	libft/libft.a
 CFLAGS		=	-Wall -Wextra -Werror -g
