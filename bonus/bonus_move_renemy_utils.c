@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 13:05:28 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/18 14:42:24 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/18 20:15:09 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int	renemy_left(t_game *game, t_point pos)
 	char	**matrix;
 
 	matrix = game->map->matrix;
-	if (matrix[pos.x][pos.y - 1] != '0')
+	if (matrix[pos.x][pos.y - 1] == '1' || matrix[pos.x][pos.y - 1] == 'R' ||
+		matrix[pos.x][pos.y - 1] == 'C' || matrix[pos.x][pos.y - 1] == 'E')
 		return (0);
 	if (matrix[pos.x][pos.y - 1] == 'P')
 		return (ft_printf(GAME_LOST), 1);
@@ -42,14 +43,13 @@ int	renemy_right(t_game *game, t_point pos)
 	char	**matrix;
 
 	matrix = game->map->matrix;
-	if (matrix[pos.x][pos.y + 1] != '0')
+	if (matrix[pos.x][pos.y + 1] == '1' || matrix[pos.x][pos.y + 1] == 'R' ||
+		matrix[pos.x][pos.y + 1] == 'C' || matrix[pos.x][pos.y + 1] == 'E')
 	{
 		return (0);
 	}
 	if (matrix[pos.x][pos.y + 1] == 'P')
-	{
 		return (ft_printf(GAME_LOST), 1);
-	}
 	put_title(game, "./img/0.xpm", pos.y * PIXEL, pos.x * PIXEL);
 	if (game->renemy_state == 0)
 	{
@@ -71,14 +71,13 @@ int	renemy_down(t_game *game, t_point pos)
 	char	**matrix;
 
 	matrix = game->map->matrix;
-	if (matrix[pos.x + 1][pos.y] != '0')
+	if (matrix[pos.x + 1][pos.y] == '1' || matrix[pos.x + 1][pos.y] == 'R' ||
+		matrix[pos.x + 1][pos.y] == 'C' || matrix[pos.x + 1][pos.y] == 'E')
 	{
 		return (0);
 	}
 	if (matrix[pos.x + 1][pos.y] == 'P')
-	{
 		return (ft_printf(GAME_LOST), 1);
-	}
 	put_title(game, "./img/0.xpm", pos.y * PIXEL, pos.x * PIXEL);
 	if (game->renemy_state == 0)
 	{
@@ -100,14 +99,13 @@ int	renemy_up(t_game *game, t_point pos)
 	char	**matrix;
 
 	matrix = game->map->matrix;
-	if (matrix[pos.x - 1][pos.y] != '0')
+	if (matrix[pos.x - 1][pos.y] == '1' || matrix[pos.x - 1][pos.y] == 'R' ||
+		matrix[pos.x - 1][pos.y] == 'C' || matrix[pos.x - 1][pos.y] == 'E')
 	{
 		return (0);
 	}
 	if (matrix[pos.x - 1][pos.y] == 'P')
-	{
 		return (ft_printf(GAME_LOST), 1);
-	}
 	put_title(game, "./img/0.xpm", pos.y * PIXEL, pos.x * PIXEL);
 	if (game->renemy_state == 0)
 	{

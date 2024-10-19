@@ -6,7 +6,7 @@
 #    By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 13:14:45 by gonolive          #+#    #+#              #
-#    Updated: 2024/10/18 19:44:17 by gonolive         ###   ########.fr        #
+#    Updated: 2024/10/19 13:01:56 by gonolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,12 @@ endif
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			make -C libft	
+			make -C libft
+			if [ "$(UNAME_S)" = "Linux" ]; then \
+				make -C mlx_linux/; \
+			else \
+				make -C mlx/; \
+			fi
 			make clean -C libft
 			$(CC) $(SRCS) $(LIBFT) $(MLXFLAGS) $(X11FLAGS) $(CFLAGS) -o $(NAME)
 
@@ -81,6 +86,11 @@ fclean:		clean
 			$(RM) $(NAME) $(BONUS_NAME)
 			$(RM) *.out
 			make fclean -C libft/
+			if [ "$(UNAME_S)" = "Linux" ]; then \
+				make clean -C mlx_linux/; \
+			else \
+				make clean -C mlx/; \
+			fi
 
 re:			fclean all
 
