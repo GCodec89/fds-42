@@ -6,7 +6,7 @@
 #    By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 13:14:45 by gonolive          #+#    #+#              #
-#    Updated: 2024/10/19 13:01:56 by gonolive         ###   ########.fr        #
+#    Updated: 2024/10/19 13:07:46 by gonolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,9 @@ X11FLAGS	=	-I/opt/X11/include -L/opt/X11/lib -lX11
 RM			=	rm -f
 OBJS		=	$(SRCS:%.c=%.o)
 BONUS_OBJS	=	$(BONUS_SRCS:%.c=%.o)
+UNAME_S := $(shell uname)
 
-ifeq ($(shell uname), Linux)
+ifeq ($(UNAME_S), Linux)
 MLXFLAGS	=	-L ./mlx_linux/ -lmlx -Ilmlx -lXext -lX11
 X11FLAGS	=	-I/usr/include/X11 -L/usr/lib/X11 -lX11
 endif
@@ -71,6 +72,11 @@ bonus:		$(BONUS_NAME)
 
 $(BONUS_NAME):	$(BONUS_OBJS)
 				make -C libft
+				if [ "$(UNAME_S)" = "Linux" ]; then \
+					make -C mlx_linux/; \
+				else \
+					make -C mlx/; \
+				fi
 				make clean -C libft
 				$(CC) $(BONUS_SRCS) $(LIBFT) $(MLXFLAGS) $(X11FLAGS) $(CFLAGS) -o $(BONUS_NAME)
 
