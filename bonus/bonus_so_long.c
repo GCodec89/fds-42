@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 10:36:10 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/22 15:49:11 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:48:39 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	check_args(int argc, char *argv[])
 	if (argc < 2)
 	{
 		error("Provide map name and extension as argument\n\
-Ex: ./so_long maps/map.ber");
+Ex: ./so_long_bonus maps/map.ber");
 	}
 	if (argc > 2)
 	{
 		error("Too many arguments. Provide only map name and extension\n\
-Ex: ./so_long maps/map.ber");
+Ex: ./so_long_bonus maps/map.ber");
 	}
 	if (ft_strstr(argv[1], ".ber") == NULL)
 	{

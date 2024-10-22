@@ -6,12 +6,12 @@
 #    By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 13:14:45 by gonolive          #+#    #+#              #
-#    Updated: 2024/10/19 13:07:46 by gonolive         ###   ########.fr        #
+#    Updated: 2024/10/22 16:48:19 by gonolive         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	so_long
-BONUS_NAME	=	bonus_so_long
+BONUS_NAME	=	so_long_bonus
 CC			=	cc
 SRCS		=	srcs/so_long.c \
 				srcs/error.c \

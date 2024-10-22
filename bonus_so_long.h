@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 10:33:04 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/18 19:45:28 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:46:57 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@
 # define ERROR_RECTANGLE "Error: map must be a rectangle\n"
 # define ERROR_WALLS "Error: map must be surrounded by walls\n"
 # define ERROR_PLAYER "Error: you must have one player\n"
+# define ERROR_RENEMY "Error: you must have one enemy\n"
 # define ERROR_COIN "Error: you need at least one collectable\n"
 # define ERROR_EXIT "Error: you must have one exit\n"
 # define ERROR_PATH "Error: map does not have a valid path\n"
