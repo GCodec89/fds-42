@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 19:33:23 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/18 19:37:36 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/22 15:53:03 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,5 @@ void	press_right(t_game *game)
 	{
 		matrix[pos.x][pos.y] = '0';
 	}
+	print_move(game);
 }
