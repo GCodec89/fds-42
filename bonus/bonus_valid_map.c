@@ -6,7 +6,7 @@
 /*   By: gonolive <gonolive@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 13:48:51 by gonolive          #+#    #+#             */
-/*   Updated: 2024/10/16 13:56:45 by gonolive         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:47:43 by gonolive         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,8 @@ int	valid_map(t_map *map)
 		return (ft_printf(ERROR_COIN), 0);
 	if (map->count_e != 1)
 		return (ft_printf(ERROR_EXIT), 0);
+	if (count_stuff(map->matrix, 'R') == 0)
+		return (ft_printf(ERROR_RENEMY), 0);
 	if (!path_valid(map))
 		return (ft_printf(ERROR_PATH), 0);
 	return (1);
